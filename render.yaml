@@ -3,7 +3,7 @@ services:
     name: ia-crypto-trader-m1
     runtime: python
     plan: free
-    buildCommand: unzip -o ia_crypto_trader_m1_pronto_render.zip && cd ia_crypto_trader_m1_deploy && pip install -r requirements.txt
+    buildCommand: cd ia_crypto_trader_m1_deploy && pip install -r requirements.txt
     startCommand: cd ia_crypto_trader_m1_deploy && uvicorn app:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /api/state
     envVars:
